@@ -1,5 +1,5 @@
-# raspberry-image
-
+# Raspberry Automation
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/maximillianbrain1/raspberry-automation)
 
 ### How to Build:
 To setup your Rancher Cluster, run the following:
