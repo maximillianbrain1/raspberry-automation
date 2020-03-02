@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "SSH_KEY": "{{env `SSH_KEY`}}",
+    "WIFI_NAME": "{{env `WIFI_NAME`}}",
+    "WIFI_PASSWORD": "{{env `WIFI_PASSWORD`}}",
+    "K3S_TOKEN": "{{env `K3S_TOKEN`}}",
+    "K3S_NODEIP_MASTER": "{{env `K3S_NODEIP_MASTER`}}",
+    "VERSION": "2019-09-30/2019-09-26",
+    "CHECKSUM":"a50237c2f718bd8d806b96df5b9d2174ce8b789eda1f03434ed2213bbca6c6ff"
+
+  },
+  "builders": [
+    {
+      "type": "arm-image",
+      "image_type": "raspberrypi",
+      "iso_url": "https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-{{user `VERSION`}}-raspbian-buster-lite.zip",
+      "iso_checksum_type": "sha256",
+      "iso_checksum": "{{user `CHECKSUM`}}",
+      "image_mounts": [
+        "/boot",
+        "/"
+    ]
+    }
+  ],
+  
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/setup_ssh.sh"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/setup_wifi.sh",
+      "environment_vars": [
+        "WIFI_NAME={{user `WIFI_NAME`}}",
+        "WIFI_PASSWORD={{user `WIFI_PASSWORD`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/setup_k3s.sh",
+      "environment_vars": [
+        "K3S_TOKEN={{user `K3S_TOKEN`}}",
+        "K3S_NODEIP_MASTER={{user `K3S_NODEIP_MASTER`}}"
+      ]
+    }
+  ]
+}
