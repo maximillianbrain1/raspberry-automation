@@ -5,12 +5,10 @@ jobs:
    steps:
     - checkout
 
-    - run: echo 0 >> id_rsa.pub
-
     - run: wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip 
 
     - run: unzip -j terraform_0.12.21_linux_amd64
 
-    - run: ./terraform init
+    - run: ./terraform init test
 
-    - run: ./terraform apply -auto-approve
+    - run: ./terraform apply -auto-approve test

@@ -26,20 +26,10 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/setup_ssh.sh"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/setup_wifi.sh",
+      "script": "scripts/build.sh",
       "environment_vars": [
         "WIFI_NAME={{user `WIFI_NAME`}}",
-        "WIFI_PASSWORD={{user `WIFI_PASSWORD`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/setup_k3s.sh",
-      "environment_vars": [
+        "WIFI_PASSWORD={{user `WIFI_PASSWORD`}}",
         "K3S_TOKEN={{user `K3S_TOKEN`}}",
         "K3S_NODEIP_MASTER={{user `K3S_NODEIP_MASTER`}}"
       ]

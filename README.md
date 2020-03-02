@@ -16,6 +16,12 @@ There is a terraform module named packer_module that will run a docker image and
 
 #### Image Baking
 To bake an image run the following with terraform.
+
+```
+
+```
+
+
 ```sh
 terraform apply -var wifi_name=$WIFI_NAME -var wifi_password=$WIFI_PASSWORD -var ssh_key_path=$SSH_KEY_PATH -var master_ip=$MASTER_IP -var k3s_token=$K3S_TOKEN
 ```
