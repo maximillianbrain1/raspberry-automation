@@ -17,6 +17,3 @@ docker run \
   -e K3S_TOKEN=$K3S_TOKEN \
   -e K3S_NODEIP_MASTER=$K3S_NODEIP_MASTER \
   arminak89/packer-builder-arm build packer.json
-
-echo "run sudo ./flasher -image=./output-arm-image/image -device=/dev/sdb"
-echo "run export KUBECONFIG=\"/etc/rancher/k3s/k3s.yaml\" to get the right kubectl context"
