@@ -22,11 +22,11 @@ terraform apply -var wifi_name=$WIFI_NAME -var wifi_password=$WIFI_PASSWORD -var
 
 Here are what the terraform variables do:
 
-`$WIFI_NAME` is the name of the wifi network that the raspberry pis are going to connect to.
-`$WIFI_PASSWORD` is the password of the wifi network if there is one.
-`$SSH_KEY_PATH` is the path of your public key to add to the authorized_keys of the image.
-`$K3S_TOKEN` is the rancher provided token when creating a cluster. The default location is `/var/lib/rancher/k3s/server/node-token`, or if one used setup_cluster, `.k3s_token`.
-`$MASTER` is the address to connect to the master. It needs the master port, which is normally 6443. 
+* `$WIFI_NAME` is the name of the wifi network that the raspberry pis are going to connect to.
+* `$WIFI_PASSWORD` is the password of the wifi network if there is one.
+* `$SSH_KEY_PATH` is the path of your public key to add to the authorized_keys of the image.
+* `$K3S_TOKEN` is the rancher provided token when creating a cluster. The default location is `/var/lib/rancher/k3s/server/node-token`, or if one used setup_cluster, `.k3s_token`.
+* `$MASTER` is the address to connect to the master. It needs the master port, which is normally 6443. 
 
 
 `flasher` has also been provided to image an sd card.
