@@ -5,9 +5,9 @@ jobs:
    steps:
     - checkout
 
-    - run: wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip 
+    - run: wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip 
 
-    - run: unzip -j terraform_0.12.21_linux_amd64
+    - run: unzip -o /tmp/terraform.zip && mv /tmp/terraform /usr/local/bin/terraform
 
     - run: ./terraform init test
 
