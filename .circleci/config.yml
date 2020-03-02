@@ -12,4 +12,4 @@ jobs:
 
     - run: unzip -j terraform_0.12.21_linux_amd64
 
-    - run: terraform apply -auto-approve
+    - run: ./terraform apply -auto-approve
