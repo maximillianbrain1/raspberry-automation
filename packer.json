@@ -30,7 +30,7 @@
     },
     {
       "destination": "/scripts/",
-      "source": "./scripts",
+      "source": "/build/scripts",
       "type": "file"
     },
     {
