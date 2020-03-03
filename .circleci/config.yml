@@ -9,6 +9,6 @@ jobs:
 
     - run: sudo unzip -d /usr/local/bin/terraform /tmp/terraform.zip 
 
-    - run: ./terraform init test
+    - run: terraform init test
 
-    - run: ./terraform apply -auto-approve test
+    - run: terraform apply -auto-approve test
