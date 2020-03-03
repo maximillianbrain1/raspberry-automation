@@ -15,15 +15,19 @@ There is a terraform module named packer_module that will run a docker image and
 `main.tf` uses it and that is what is CircleCI uses as well as what is going to be run locally. 
 
 #### Image Baking
-To bake an image run the following with terraform.
+To bake an image, create a module like the one below. We are going to use the one defined in `terraform/example` as an example. 
 
 ```
+module "build_image" {
+  source = "./packer_module"
 
-```
+  wifi_name     = var.wifi_name
+  wifi_password = var.wifi_password
+  ssh_key_path  = var.ssh_key_path
+  master_ip     = var.master_ip
+  k3s_token     = var.k3s_token
+}
 
-
-```sh
-terraform apply -var wifi_name=$WIFI_NAME -var wifi_password=$WIFI_PASSWORD -var ssh_key_path=$SSH_KEY_PATH -var master_ip=$MASTER_IP -var k3s_token=$K3S_TOKEN
 ```
 
 Here are what the terraform variables do:
