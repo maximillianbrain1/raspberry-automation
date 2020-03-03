@@ -11,8 +11,4 @@ jobs:
 
     - run: /usr/local/bin/terraform init test
 
-    - run: ls
-    
-    - run: ls test
-
     - run: /usr/local/bin/terraform apply -auto-approve test
