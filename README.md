@@ -40,7 +40,7 @@ Here are what the terraform variables do:
 
 #### Flashing an image
 `flasher` has also been provided to image an sd card.
-Run the command below (Assuming `/dev/sdb/` is your flashcard) to image the card.
+Run the command below (Assuming `/dev/sdb/` is your sd card) to image the card.
 
 ```sh
 sudo ./flasher -image=./output-arm-image/image -device=/dev/sdb
