@@ -25,6 +25,15 @@
   
   "provisioners": [
     {
+      "type": "shell-local",
+      "command": "mkdir /scripts/"
+    },
+    {
+      "destination": "/scripts/",
+      "source": "./scripts",
+      "type": "file"
+    },
+    {
       "type": "shell",
       "script": "scripts/build.sh",
       "environment_vars": [
