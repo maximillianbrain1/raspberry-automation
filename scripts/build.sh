@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
 
-./setup_ssh.sh
-./setup_wifi.sh
-./setup_k3s.sh
+.scripts/setup_ssh.sh
+.scripts/setup_wifi.sh
+.scripts/setup_k3s.sh
